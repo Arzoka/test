@@ -19,7 +19,6 @@ for(let i = 0; i < boxes.length; i++){
 // laat de variabele i bij 0 beginnen, 
 
 for(let i = 0; i < sphere.length; i++){
-    sphere[i].setAttribute("color","#"+Math.floor(Math.random()*16777215).toString(16));
     sphere[i].onmouseenter = function(){
         cursor.setAttribute("color",sphere[i].getAttribute("color"));
     }

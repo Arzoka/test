@@ -5,7 +5,6 @@ const pickaxe = document.getElementById("js--pickaxe");
 const pickaxegrabbed =  document.getElementById("js--pickaxe--grabbed");
 
 const trees = document.getElementsByClassName("js--tree");
-const flags = document.getElementsByClassName("js--flag");
 
 itemgrabbed.setAttribute("visible", false);
 
@@ -21,18 +20,6 @@ item.onmouseenter = function(){
         canichopwood = true;
     }
 }
-
-window.addEventListener('keydown', function (e) {
-    if (e.key == "q") {
-        item.setAttribute("visible", true);
-        itemgrabbed.setAttribute("visible", false);
-        grabbed = false;
-        pickaxegrabbed.setAttribute("visible", false);
-        pickaxe.setAttribute("visible", true);
-        canibreakstone = false;
-        canichopwood = false;
-    }
-}, false);
 
 const yellowspheres = document.getElementsByClassName("js--spheres");
 const invisiblebox = document.getElementById("js--invisible--box");
@@ -86,22 +73,6 @@ for(let i = 0; i < trees.length; i++ ){
             trees[i].setAttribute("visible",false);
             wood = wood + 1;
             document.getElementById("js--wood").innerText = wood;
-
-
-        }
-
-    }
-}
-
-let flag = 0;
-
-for(let i = 0; i < flags.length; i++ ){
-    flags[i].onmouseenter = function(){
-        if(flags[i].getAttribute("visible") === true && canichopwood === true){
-            flags[i].setAttribute("visible",false);
-            flag = flag + 1;
-            document.getElementById("js--flagmath2").style.opacity = 1;
-            document.getElementById("js--flagmat").innerText = flag;
 
 
         }
